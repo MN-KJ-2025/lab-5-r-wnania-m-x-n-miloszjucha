@@ -24,7 +24,11 @@ def spare_matrix_Abt(m: int, n: int) -> tuple[np.ndarray, np.ndarray] | None:
             - Wektor b (m,).
         Jeżeli dane wejściowe są niepoprawne funkcja zwraca `None`.
     """
-    pass
+    if not isinstance(m, n, int) or m <= 0 or n <=0:
+        return None 
+    wektor = np.array(np.linspace(0,1),size=m)
+    matrix = np.vander(wektor, n, True)
+    return matrix, wektor
 
 
 def square_from_rectan(
@@ -44,6 +48,11 @@ def square_from_rectan(
             - Wektor b_new (n,).
         Jeżeli dane wejściowe są niepoprawne funkcja zwraca `None`.
     """
+    if not isinstance(A, b, np.ndarray):
+        return None
+    np.transpose(A)
+    np.linalg.lstsq()
+
     pass
 
 
